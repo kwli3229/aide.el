@@ -106,7 +106,7 @@ START and END are selected region boundaries."
   (let* ((region (buffer-substring-no-properties start end))
          (result (aide--openai-complete-string region))
         original-point)
-    (goto-char (point-max))
+    (goto-char (2+ (point)))
     (setq original-point (point))
     (if result
         (progn
